@@ -9,7 +9,7 @@ public class TestContext {
 	private WebDriverManager webDriverManager;
 
 	public TestContext () {
-		pageObjectManager = new PageObjectManager(webDriverManager.getDriver());
+		pageObjectManager = new PageObjectManager(webDriverManager.getGeckoDriver());
 	}
 	
 	public PageObjectManager getPageObjectManager() {

@@ -30,4 +30,9 @@ public class HomePageSteps {
 	public void user_click_on_text_box() {
 	  homePage.clickTextBox();
 	}
+	
+	@When("clicks on Web table card")
+	public void user_click_on_web_table() {
+	  homePage.clickWebTableCard();
+	}
 }
