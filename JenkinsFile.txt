@@ -1,0 +1,9 @@
+properties([
+
+parameters([
+booleanParam(
+defaultValue: true,
+name: 'Feature branch')
+])
+]
+)
