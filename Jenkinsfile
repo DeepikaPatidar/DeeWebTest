@@ -3,7 +3,7 @@
 pipeline {
     agent any 
     stages {
-        stage('Checkout') {
+        steps('Checkout') {
             container ('maven') {
                try{
                    checkout scm
@@ -13,7 +13,7 @@ pipeline {
                }             
             }
         }
-        stage('Build') {
+        steps('Build') {
             container ('maven') {
                try{
                    sh "mvn clean install -DskipTests"
@@ -23,7 +23,7 @@ pipeline {
                }             
             }
         }
-         stage('Test') {
+         steps('Test') {
             container ('maven') {
                try{
                    sh "mvn test"
