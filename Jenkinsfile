@@ -7,7 +7,6 @@ pipeline {
             steps {
                 echo 'Hello world!' 
                 echo 'deepika'
-                echo 'patidar'
             }
         }
     }
