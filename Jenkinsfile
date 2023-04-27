@@ -3,8 +3,8 @@
 pipeline {
     agent any 
     stages {
-        steps('Checkout') {
-            container ('maven') {
+        stage('Checkout') {
+        steps{
                try{
                    checkout scm
                } catch(err){
@@ -13,8 +13,8 @@ pipeline {
                }             
             }
         }
-        steps('Build') {
-            container ('maven') {
+        stage('Build') {
+            steps {
                try{
                    sh "mvn clean install -DskipTests"
                } catch(err){
@@ -23,8 +23,8 @@ pipeline {
                }             
             }
         }
-         steps('Test') {
-            container ('maven') {
+         stage('Test') {
+            steps {
                try{
                    sh "mvn test"
                } catch(Exception err){
