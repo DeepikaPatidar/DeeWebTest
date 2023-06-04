@@ -2,11 +2,28 @@
 
 pipeline {
     agent any 
+     tools {
+        maven "MAVEN"
+        jdk "JDK"
+    }
     stages {
-        stage('Stage 1') {
+        stage('Checkout') {
+        steps {
+                   checkout scm
+                   echo 'Checkout stage'
+               }             
+            }
+        stage('Build') {
             steps {
-                echo 'Hello world!' 
+                   bat 'mvn clean install -DskipTests'
+                   echo 'build stage'
+               }             
+            }
+         stage('Test') {
+            steps {
+                   bat 'mvn test'
+                   echo 'test stage'
+               }             
             }
         }
     }
-}
