@@ -2,7 +2,7 @@
 
 properties([
 	parameters([
-		booleanParam(
+		stringParam(
 			defaultValue: 'develop',
 			description: 'Environment for running regression test',
 			name: 'Environment'
