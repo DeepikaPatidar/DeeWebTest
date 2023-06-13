@@ -1,5 +1,10 @@
 package com.steps;
 
+import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
+
+import java.util.List;
+
 import com.cucumber.TestContext;
 import com.pageobject.WebTablePage;
 
@@ -29,6 +34,23 @@ public class WebTableSteps {
 	@Then("form should be open")
 	public void form_should_be_open() {
 		
+	}
+	
+	@When("User fill employee details")
+	public void user_fill_employee_details() {
+		webTablePage.fillEmployeeDetails();
+		
+	}
+	
+	@When("submit form")
+	public void submit_form() {
+		webTablePage.submitForm();
+	}
+	
+	@Then("Webtable should display employee details")
+	public void webtable_should_display_employee_details() {
+		boolean s = webTablePage.verifyTable();
+		assertTrue(s);
 	}
 
 }

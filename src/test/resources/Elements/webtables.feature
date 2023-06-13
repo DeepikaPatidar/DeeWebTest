@@ -11,3 +11,6 @@ Scenario: verify adding items in web table
 	Given User is on web table page
 	When User click Add button
 	Then form should be open
+	When User fill employee details
+	And submit form
+	Then Webtable should display employee details

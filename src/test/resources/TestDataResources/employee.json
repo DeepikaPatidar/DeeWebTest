@@ -1,0 +1,18 @@
+[
+	{
+		"firstName": "Deepika",
+		"lastName": "Patidar",
+		"age": "25",
+		"email": "deep@mailinator.com",
+		"salary": "20000",
+		"department": "sales"
+	},
+	{
+		"firstName": "Mansi",
+		"lastName": "Sharma",
+		"age": "15",
+		"email": "man@gmail.com",
+		"salary": "20050",
+		"department": "QA"
+	}
+]
