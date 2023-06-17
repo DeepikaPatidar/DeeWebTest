@@ -6,10 +6,10 @@ import com.manager.WebDriverManager;
 public class TestContext {
 	
 	private PageObjectManager pageObjectManager;
-	private WebDriverManager webDriverManager;
+	private WebDriverManager webDriverManager = new WebDriverManager();
 
 	public TestContext () {
-		pageObjectManager = new PageObjectManager(webDriverManager.getGeckoDriver());
+		pageObjectManager = new PageObjectManager(webDriverManager.getDriver());
 	}
 	
 	public PageObjectManager getPageObjectManager() {
