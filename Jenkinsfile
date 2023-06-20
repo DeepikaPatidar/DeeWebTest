@@ -1,5 +1,20 @@
 #!/usr/bin/groovy
 
+properties([
+	parameters([
+		stringParam(
+			defaultValue: 'develop',
+			description: 'Environment for running regression test',
+			name: 'Environment'
+			),
+		booleanParam(
+			defaultValue: true,
+			description: 'Perform Smoke test if true',
+			name: 'PERFORM_SMOKE_TEST'
+			)
+	])
+])
+
 pipeline {
     agent any 
      tools {
