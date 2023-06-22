@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,6 +30,21 @@ public class BasePage {
 		we.click();
 	}
 	
+	public void scrollAndClick(WebElement we) {
+		scrollInToView(we);
+		//we.click();
+	}
+	
+	public void clickRightBtn(WebElement we) {
+		Actions action = new Actions(driver);
+		action.moveToElement(we).contextClick().perform();
+	}
+	
+	public void doubleClick(WebElement we) {
+		Actions action = new Actions(driver);
+		action.moveToElement(we).doubleClick().perform();
+	}
+	
 	public void sendKeys(String data, WebElement we) {
 		we.sendKeys(data);
 	}
@@ -39,10 +55,7 @@ public class BasePage {
 		
 	}
 	
-	public void scrollAndClick(WebElement we) {
-		scrollInToView(we);
-		//we.click();
-	}
+	
 	
 	public void execute(String command, WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -52,4 +65,7 @@ public class BasePage {
 	public void scrollInToView(WebElement element) {
 		execute("arguments[0].click();", element);
 	}
+	
+	
+
 }
