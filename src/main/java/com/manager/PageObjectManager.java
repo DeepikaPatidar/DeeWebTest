@@ -2,7 +2,9 @@ package com.manager;
 
 import org.openqa.selenium.WebDriver;
 
+import com.pageobject.ButtonsPage;
 import com.pageobject.HomePage;
+import com.pageobject.LeftMenuPage;
 import com.pageobject.TextBoxPage;
 import com.pageobject.WebTablePage;
 
@@ -13,6 +15,8 @@ public class PageObjectManager {
 	private HomePage homePage;
 	private TextBoxPage textBoxPage;
 	private WebTablePage webTablePage;
+	private ButtonsPage buttonsPage;
+	private LeftMenuPage leftMenuPage;
 	
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
@@ -28,5 +32,13 @@ public class PageObjectManager {
 	
 	public WebTablePage getWebTablePage() {
 		return (webTablePage==null)? new WebTablePage(driver) : webTablePage; 
+	}
+	
+	public ButtonsPage getButtonsPage() {
+		return (buttonsPage == null ? new ButtonsPage(driver) : buttonsPage);
+	}
+	
+	public LeftMenuPage getLeftMenuPage() {
+		return (leftMenuPage == null ? new LeftMenuPage(driver) : leftMenuPage);
 	}
 }

@@ -19,10 +19,10 @@ public class CucumberHooks {
 		
 	}
 	
-//	@After
-//	public void afterHooks() {
-//		testContext.getwebDriverManager().quiteDriver();
-//	}
+	@After
+	public void afterHooks() {
+		testContext.getwebDriverManager().quiteDriver();
+	}
 }
 
 
